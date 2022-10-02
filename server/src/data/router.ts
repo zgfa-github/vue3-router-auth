@@ -34,7 +34,7 @@ export default <IRouter[]>[
     {
         id: 6,
         pid: 0,
-        path: '/course',
+        path: '/student',
         name: 'Student',
         title: '学生管理'
     },
@@ -49,7 +49,7 @@ export default <IRouter[]>[
     {
         id: 8,
         pid: 6,
-        path: '/operate',
+        path: '/add',
         name: 'StudentAdd',
         link: '/student/add',
         title: '增加学生'

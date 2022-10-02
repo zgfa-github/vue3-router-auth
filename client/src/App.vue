@@ -6,13 +6,13 @@ import { onMounted } from 'vue'
 import axios from 'axios';
 import qs from 'qs'
 import { getRouterAuth } from './services/getRouterAuth'
-console.log(getRouterAuth);
-onMounted(async () => {
-  console.log('开始');
-  let res = await getRouterAuth({uid: 2})
-  console.log(res);
+//console.log(getRouterAuth);
+// onMounted(async () => {
+//   console.log('开始');
+//   let res = await getRouterAuth({uid: 1})
+//   console.log(res);
 
-})
+// })
 
 // axios.post('api/getRouterAuth', qs.stringify({
 //   uid: 3

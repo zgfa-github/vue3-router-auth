@@ -19,6 +19,8 @@ app.use(bodyParser.json());
 
 app.post('/getRouterAuth', (request: Request, response: Response) => { 
     const { uid }: IBody = request.body;
+    console.log(uid);
+    
     let authRouteList: IRouter[] = []
     if (uid) {
         const userInfo: IUser | undefined = users.find(user => user.id == uid)
@@ -32,21 +34,25 @@ app.post('/getRouterAuth', (request: Request, response: Response) => {
                 })
             })
             response.status(200).send({
+                code: 200,
+                msg: 'ok',
                 data: authRouteList
             })
         } else {
             response.status(200).send({
+                code: 1001,
                 msg: 'No userInfo for this UID',
                 data: null
             })
         }
     } else { 
         response.status(200).send({
+            code: 1002,
             msg: 'No UID received',
             data: null
         })
     }
 })
 app.listen(PORT, () => {
-    console.log('Server is running on' + PORT + '.')
+    console.log('Server is running on' +  PORT + '.')
 })
