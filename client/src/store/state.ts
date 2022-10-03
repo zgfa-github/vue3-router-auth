@@ -1,7 +1,7 @@
 
 
 export default {
-    uid: 2,
+    uid: 1,
     hasAuth: false,
     routeTree: []
 }

@@ -10,7 +10,7 @@ export default <IRouter[]>[
     {
         id: 3,
         pid: 2,
-        path: '/operate',
+        path: '/course/operate',
         name: 'CourseOperate',
         link: '/course/operate',
         title: '课程操作'
@@ -24,9 +24,17 @@ export default <IRouter[]>[
         title: '课程数据'
     },
     {
+        id: 9,
+        pid: 2,
+        path: '/course/preview',
+        name: 'CoursePreview',
+        link: '/course/preview',
+        title: '课程预览'
+    },
+    {
         id: 5,
-        pid: 3,
-        path: '/add',
+        pid: 2,
+        path: '/course/add',
         name: 'CourseAdd',
         link: '/course/add',
         title: '增加课程'
@@ -41,7 +49,7 @@ export default <IRouter[]>[
     {
         id: 7,
         pid: 6,
-        path: '/operate',
+        path: '/student/operate',
         name: 'StudentOperate',
         link: '/student/operate',
         title: '学生操作'
@@ -49,7 +57,7 @@ export default <IRouter[]>[
     {
         id: 8,
         pid: 6,
-        path: '/add',
+        path: '/student/add',
         name: 'StudentAdd',
         link: '/student/add',
         title: '增加学生'

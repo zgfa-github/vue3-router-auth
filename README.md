@@ -8,17 +8,17 @@
 - vite.config.ts  配置参数  详情参考官网
 
 ## vue3框架
-
+- 组合api写法，更加容易抽离管理维护代码
 - vue3+ts
 
 ## vue-router4.0版本以上
 
-## vuex@next 版本
+## vuex@next 版本  (官网都有详细介绍，要学会学习)
 
 - state
 - actions
 - mutations
-- 常量声明  写法[]
+- 常量声明  export const SET_AUTH: string = 'SET_AUTH';
 
 ## vite-plugin-mock模拟数据
 

@@ -7,14 +7,14 @@ import { formatRouteTree } from '@/utils'
 
 export default {
     async [SET_ROUTE_TREE]({ commit, state }: { commit: Commit, state: IState }) {
-        console.log(state);
+        // console.log(state);
         
-        console.log(typeof state.uid);
+        // console.log(typeof state.uid);
         
         const routeList = await getRouterAuth({ uid: state.uid }) as unknown as IRouter[]
-        console.log(routeList);
+        //console.log(routeList);
         const routeTree = formatRouteTree(routeList)
-        console.log(routeTree)
+        //console.log(routeTree)
         commit(SET_ROUTE_TREE, routeTree);
         commit(SET_AUTH, true);
      }
