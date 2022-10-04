@@ -10,9 +10,14 @@ export default {
         // console.log(state);
         
         // console.log(typeof state.uid);
-        
+        /**
+         * 获取后台返回的数据
+         */
         const routeList = await getRouterAuth({ uid: state.uid }) as unknown as IRouter[]
         //console.log(routeList);
+        /**
+         * 格式化为树状结构
+         */
         const routeTree = formatRouteTree(routeList)
         //console.log(routeTree)
         commit(SET_ROUTE_TREE, routeTree);

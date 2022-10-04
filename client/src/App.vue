@@ -17,7 +17,7 @@ onMounted(async () => {
   // let res = await getRouterAuth({uid: 1})
   // console.log(res);
   const res = useRouter().getRoutes()
-console.log('获取路由信息');
+console.log('zaiAPP获取路由信息');
 console.log(res);
 
 

@@ -3,6 +3,11 @@ import store from '@/store';
 import { Router, RouteRecordRaw } from 'vue-router';
 import { Store } from 'vuex';
 import { IRouter, IState } from './../types/index.d';
+/**
+ * 
+ * @param routeTree 
+ * @returns 
+ */
 export function generateRouter(routeTree: IRouter[]) { 
     let newRoutes = routeTree.map(route => { 
         let _route: RouteRecordRaw = {

@@ -61,5 +61,20 @@ export default <IRouter[]>[
         name: 'StudentAdd',
         link: '/student/add',
         title: '增加学生'
-    }
+    },
+    {
+        id: 10,
+        pid: 0,
+        path: '/order',
+        name: 'Order',
+        title: '订单管理'
+    },
+    {
+        id: 11,
+        pid: 10,
+        path: '/order/add',
+        name: 'OrderAdd',
+        link: '/order/add',
+        title: '增加订单'
+    },
 ]

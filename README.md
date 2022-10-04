@@ -45,3 +45,20 @@
 - 然后整体思路设计（根据业务需求），数据结构如何组织（声明文件类型的*.d.ts），业务逻辑流程是如何的(最好是画图比较直观，一目了然)
 
 - 再动手开发，函数或者某些概念不熟悉的情况，第一时间结合查询官网，再结合百度搜索
+
+## git代码提交规范
+- 安装 commitizen cz-customizable
+- 在package.json中进行新增
+"config": {
+    "commitizen": {
+        "path": "node_modules/cz-customizable"
+    }
+}
+- 在根目录下新建.cz-config.js 写配置之后，就可以用git cz代替git commit
+
+## 另外一种，使用husky进行强制git代码提交规范
+- npm install husky@7.0.1 --save-dev
+- npx husky install
+- 在package.json中进行新增指令并执行
+"prepare": "husky install"
+执行 npm run prepare

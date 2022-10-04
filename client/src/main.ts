@@ -12,7 +12,7 @@ import { useRouter } from 'vue-router'
     
 // })
 routerBeforeEach(router, store)
-console.log(router);
+//console.log(router);
 
 //const app = createApp(App)
 createApp(App).use(store).use(router).mount('#app')

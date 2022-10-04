@@ -3,7 +3,7 @@ export default <IUser[]>[
     {
         id: 1,
         username: 'zhangsan',
-        auth: [2,3,6,7,9]
+        auth: [2,3,6,7,9,10,11]
     },
     {
         id: 2,
