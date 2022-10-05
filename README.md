@@ -57,8 +57,25 @@
 - 在根目录下新建.cz-config.js 写配置之后，就可以用git cz代替git commit
 
 ## 另外一种，使用husky进行强制git代码提交规范
+- pnpm install --save-dev @commitlint/config-conventional@12.1.4 @commitlint/cli@12.1.4
 - npm install husky@7.0.1 --save-dev
-- npx husky install
+- npx husky install  初始化
 - 在package.json中进行新增指令并执行
 "prepare": "husky install"
 执行 npm run prepare
+
+## 使用husky进行强制代码格式化规范
+- npx husky add .husky/commit-msg  会生成一个文件commit-msg
+- 写入 npx --no-install commitlint --edit
+- npx husky add .husky/pre-commit  会生成一个文件pre-commit
+
+- 写入 npx lint-staged
+在package.json文件中增加如下：
+"lint-staged": {
+    "src/**/*.{js,ts,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+
+## 加油88
