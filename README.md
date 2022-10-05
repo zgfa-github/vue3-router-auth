@@ -69,7 +69,7 @@
 - 写入 npx --no-install commitlint --edit
 - npx husky add .husky/pre-commit  会生成一个文件pre-commit
 
-- 写入 npx lint-staged
+写入 npx lint-staged
 在package.json文件中增加如下：
 "lint-staged": {
     "src/**/*.{js,ts,vue}": [
