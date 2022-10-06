@@ -1,24 +1,36 @@
-import { createRouter, RouteRecordRaw,createWebHistory,createWebHashHistory } from 'vue-router'
-import Home from '@/views/Home.vue'
+import {
+    createRouter,
+    RouteRecordRaw,
+    createWebHistory,
+    createWebHashHistory,
+} from 'vue-router';
+import Home from '@/views/Home.vue';
 /**RouteRecordRaw 路由对象类型
  * 静态路由
  */
 const routes: RouteRecordRaw[] = [
     {
         path: '/',
-        name: 'Home',
-        component: Home
-       
+        name: 'Layout',
+        component: () => import('../components/layout/Layout.vue'),
+        children: [
+            {
+                path: 'index',
+                name: 'Home',
+                component: Home,
+            },
+        ],
     },
     {
         path: '/:pathMatch(.*)',
         name: 'NotFound',
-        component: () => import(/* webpackChunkName: "notFound"*/'@/views/NotFound.vue')
-    }
-]
+        component: () =>
+            import(/* webpackChunkName: "notFound"*/ '@/views/NotFound.vue'),
+    },
+];
 const router = createRouter({
     history: createWebHistory(),
-    routes
-})
+    routes,
+});
 
 export default router;

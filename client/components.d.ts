@@ -23,6 +23,7 @@ declare module '@vue/runtime-core' {
     ElTable: typeof import('element-plus/es')['ElTable']
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Layout: typeof import('./src/components/layout/Layout.vue')['default']
     MenuItem: typeof import('./src/components/MenuItem.vue')['default']
     MenuPlusItem: typeof import('./src/components/MenuPlusItem.vue')['default']
     MyFooter: typeof import('./src/components/MyFooter.vue')['default']

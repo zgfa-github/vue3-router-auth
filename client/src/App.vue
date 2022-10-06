@@ -3,7 +3,7 @@
   <my-side></my-side>
   <my-main></my-main>
   <my-footer></my-footer> -->
-    <el-container class="layout-container-demo" style="height: 500px">
+    <el-container class="layout-container-demo">
         <el-header>Header</el-header>
         <el-container>
             <el-aside width="200px">
@@ -23,7 +23,7 @@
             <el-container>
                 <el-main>
                     <el-scrollbar>
-                        <router-view></router-view>
+                        <Layout />
                     </el-scrollbar>
                 </el-main>
                 <el-footer></el-footer>
@@ -46,6 +46,7 @@ import MyFooter from './components/MyFooter.vue';
 import MyMain from './components/MyMain.vue';
 import { ref, onMounted } from 'vue';
 import { Menu as IconMenu, Message, Setting } from '@element-plus/icons-vue';
+import Layout from './components/layout/Layout.vue';
 import MenuPlusItem from './components/MenuPlusItem.vue';
 import MenuItem from './components/MenuItem.vue';
 import { useStore } from 'vuex';
@@ -87,7 +88,8 @@ const store = useStore();
 }
 .layout-container-demo .el-aside {
     color: var(--el-text-color-primary);
-    background: var(--el-color-primary-light-8);
+    /* background: var(--el-color-primary-light-8); */
+    border-right: 1px solid #ccc;
 }
 .layout-container-demo .el-menu {
     border-right: none;
@@ -101,5 +103,8 @@ const store = useStore();
     justify-content: center;
     height: 100%;
     right: 20px;
+}
+.el-aside .el-scrollbar {
+    background: #e5e5e5;
 }
 </style>

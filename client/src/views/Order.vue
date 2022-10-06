@@ -1,14 +1,10 @@
 <template>
     <div>
-        <h1>订单管理</h1>
-        <router-view></router-view>
+        <h4>订单管理</h4>
+        <!-- <router-view></router-view> -->
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style >
-
-</style>
+<style></style>

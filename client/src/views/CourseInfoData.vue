@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h6>课程数据</h6>
+        <h4>课程数据</h4>
     </div>
     <el-scrollbar>
         <el-table :data="tableData">

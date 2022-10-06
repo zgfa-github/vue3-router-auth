@@ -6,7 +6,10 @@
             </template>
             <el-menu-item-group v-for="(child, index) in item.children">
                 <!-- <template #title><el-icon><message /></el-icon>Group 1</template> -->
-                <el-sub-menu v-if="child.children && child.children.length > 0">
+                <el-sub-menu
+                    index="2"
+                    v-if="child.children && child.children.length > 0"
+                >
                     <template #title>
                         {{ child.title }}
                     </template>
