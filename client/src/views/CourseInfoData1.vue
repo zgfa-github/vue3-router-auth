@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>HelloWorld</h1>
-        <el-button>I am ElButton</el-button>
+        <h1>增加课程11111</h1>
+       
     </div>
 </template>
 

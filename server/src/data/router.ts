@@ -1,80 +1,98 @@
-import { IRouter } from './type'
+import { IRouter } from "./type";
 export default <IRouter[]>[
-    {
-        id: 2,
-        pid: 0,
-        path: '/course',
-        name: 'Course',
-        title: '课程管理'
-    },
-    {
-        id: 3,
-        pid: 2,
-        path: '/course/operate',
-        name: 'CourseOperate',
-        link: '/course/operate',
-        title: '课程操作'
-    },
-    {
-        id: 4,
-        pid: 3,
-        path: '/info_data',
-        name: 'CourseInfoData',
-        link: '/course/operate/info_data',
-        title: '课程数据'
-    },
-    {
-        id: 9,
-        pid: 2,
-        path: '/course/preview',
-        name: 'CoursePreview',
-        link: '/course/preview',
-        title: '课程预览'
-    },
-    {
-        id: 5,
-        pid: 2,
-        path: '/course/add',
-        name: 'CourseAdd',
-        link: '/course/add',
-        title: '增加课程'
-    },
-    {
-        id: 6,
-        pid: 0,
-        path: '/student',
-        name: 'Student',
-        title: '学生管理'
-    },
-    {
-        id: 7,
-        pid: 6,
-        path: '/student/operate',
-        name: 'StudentOperate',
-        link: '/student/operate',
-        title: '学生操作'
-    },
-    {
-        id: 8,
-        pid: 6,
-        path: '/student/add',
-        name: 'StudentAdd',
-        link: '/student/add',
-        title: '增加学生'
-    },
-    {
-        id: 10,
-        pid: 0,
-        path: '/order',
-        name: 'Order',
-        title: '订单管理'
-    },
-    {
-        id: 11,
-        pid: 10,
-        path: '/order/add',
-        name: 'OrderAdd',
-        link: '/order/add',
-        title: '增加订单'
-    },
-]
+  {
+    id: 2,
+    pid: 0,
+    path: "/course",
+    name: "Course",
+    title: "课程管理",
+  },
+  {
+    id: 3,
+    pid: 2,
+    path: "/course/operate",
+    name: "CourseOperate",
+    link: "/course/operate",
+    title: "课程操作",
+  },
+  {
+    id: 4,
+    pid: 3,
+    path: "/course/operate/info_data",
+    name: "CourseInfoData",
+    link: "/course/operate/info_data",
+    title: "课程数据",
+  },
+
+  {
+    id: 5,
+    pid: 2,
+    path: "/course/add",
+    name: "CourseAdd",
+    link: "/course/add",
+    title: "增加课程",
+  },
+
+  {
+    id: 6,
+    pid: 0,
+    path: "/student",
+    name: "Student",
+    title: "学生管理",
+  },
+  {
+    id: 7,
+    pid: 6,
+    path: "/student/operate",
+    name: "StudentOperate",
+    link: "/student/operate",
+    title: "学生操作",
+  },
+  {
+    id: 8,
+    pid: 6,
+    path: "/student/add",
+    name: "StudentAdd",
+    link: "/student/add",
+    title: "增加学生",
+  },
+  {
+    id: 9,
+    pid: 2,
+    path: "/course/preview",
+    name: "CoursePreview",
+    link: "/course/preview",
+    title: "课程预览",
+  },
+  {
+    id: 10,
+    pid: 0,
+    path: "/order",
+    name: "Order",
+    title: "订单管理",
+  },
+  {
+    id: 11,
+    pid: 10,
+    path: "/order/add",
+    name: "OrderAdd",
+    link: "/order/add",
+    title: "增加订单",
+  },
+  {
+    id: 12,
+    pid: 5,
+    path: "/course/add1",
+    name: "CourseInfoData1",
+    link: "/course/add1",
+    title: "增加课程1",
+  },
+  {
+    id: 13,
+    pid: 10,
+    path: "/order/detail",
+    name: "OrderDetail",
+    link: "/order/detail",
+    title: "订单详情",
+  },
+];

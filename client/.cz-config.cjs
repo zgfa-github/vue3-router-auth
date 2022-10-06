@@ -1,5 +1,6 @@
 /**
  * 为什么该文件取后缀名.cjs 是因为package.json文件中有配置 "type": "module",
+ * 要么改.cjs，要么删除配置 "type": "module",
  */
 module.exports = {
     //可选问题

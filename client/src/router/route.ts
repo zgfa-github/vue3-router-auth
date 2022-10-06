@@ -49,10 +49,12 @@ export function routerBeforeEach(router: Router, store: Store<IState>) {
             // })
             //动态添加路由
             newRoutes.forEach(route => router.addRoute(route))
-            console.log(router);
+            //console.log(router);
             
             next({ path: to.path })
         } else { 
+            console.log('next');
+            
             next();
         }
         

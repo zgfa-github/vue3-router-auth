@@ -1,5 +1,5 @@
 <template>
-   
+        <!--自己手写-->
         <ul v-if="item.children && item.children.length > 0">
             <li>
                 <router-link :to="item.path || item.link">{{item.title}}</router-link>
@@ -13,7 +13,7 @@
                 <router-link :to="item.path || item.link">{{item.title}}</router-link>
             </li>
         </ul>
-    
+       
 </template>
 
 <script setup lang="ts">

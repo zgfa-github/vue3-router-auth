@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
-//mock 模拟数据
+//mock模拟数据接口
 const BASE_URL = '/mock/api';
-//代理真实接口
+//代理真实接口(解决跨域)
 const PRO_URL = '/api'
 const http = axios.create({
     baseURL: PRO_URL,
