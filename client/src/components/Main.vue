@@ -1,6 +1,6 @@
 <template>
     <el-main>
-        <Layout />
+        <router-view></router-view>
     </el-main>
 </template>
 

@@ -14,7 +14,6 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 
 // })
 //console.log(router);
-routerBeforeEach(router, store);
 
 const app = createApp(App);
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {

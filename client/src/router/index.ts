@@ -11,13 +11,23 @@ import Home from '@/views/Home.vue';
 const routes: RouteRecordRaw[] = [
     {
         path: '/',
-        component: () => import('@/components/layout/Layout.vue'),
+        // redirect: '/constanst',
+        name: 'Layout',
+        component: () => import('@/layout/index.vue'),
         children: [],
     },
     {
         path: '/home',
         name: 'Home',
         component: Home,
+        meta: {
+            icon: 'Edit',
+        },
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: () => import('@/views/Login.vue'),
         meta: {
             icon: 'Edit',
         },

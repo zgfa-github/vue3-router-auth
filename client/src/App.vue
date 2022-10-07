@@ -1,19 +1,5 @@
 <template>
-    <el-container class="home_container">
-        <!-- 头部区域 -->
-        <el-header>
-            <div>
-                <img src="../assets/heima.png" alt="" />
-                <span>电商后台管理系统</span>
-            </div>
-            <el-button type="info" @click="logout">退出</el-button>
-        </el-header>
-        <el-container>
-            <Aside />
-            <Main />
-            <Footer />
-        </el-container>
-    </el-container>
+    <router-view></router-view>
 </template>
 
 <script setup lang="ts">
@@ -23,9 +9,7 @@
 import axios from 'axios';
 import qs from 'qs';
 import { getRouterAuth } from './services/getRouterAuth';
-import Aside from './components/Aside.vue';
-import Main from './components/Main.vue';
-import Footer from './components/Footer.vue';
+
 import { ref, onMounted } from 'vue';
 import { Menu as IconMenu, Message, Setting } from '@element-plus/icons-vue';
 import Layout from './components/layout/Layout.vue';

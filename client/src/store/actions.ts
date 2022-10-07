@@ -22,7 +22,7 @@ export default {
         const routeList = (await getRouterAuth({
             uid: state.uid,
         })) as unknown as IRouter[];
-        console.log('后端接口返回数据');
+        console.log('actions后端接口返回数据');
         console.log(routeList);
         /**
          * 格式化为树状结构
