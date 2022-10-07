@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h4>课程操作</h4>
+        <h4>订单详情</h4>
     </div>
 </template>
 

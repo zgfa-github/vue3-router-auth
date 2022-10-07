@@ -1,14 +1,9 @@
 <template>
     <div>
-        <h4>添加订单</h4>
-        
+        <h4>增加订单</h4>
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style >
-
-</style>
+<style></style>

@@ -6,6 +6,10 @@ export default <IRouter[]>[
     path: "/course",
     name: "Course",
     title: "课程管理",
+    meta: {
+      icon: "Edit",
+      title: "8888",
+    },
   },
   {
     id: 3,
@@ -23,7 +27,6 @@ export default <IRouter[]>[
     link: "/course/operate/info_data",
     title: "课程数据",
   },
-
   {
     id: 5,
     pid: 2,
@@ -39,6 +42,10 @@ export default <IRouter[]>[
     path: "/student",
     name: "Student",
     title: "学生管理",
+    meta: {
+      icon: "Message",
+      title: "8888",
+    },
   },
   {
     id: 7,
@@ -70,6 +77,10 @@ export default <IRouter[]>[
     path: "/order",
     name: "Order",
     title: "订单管理",
+    meta: {
+      icon: "Setting",
+      title: "8888",
+    },
   },
   {
     id: 11,
