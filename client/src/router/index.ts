@@ -14,16 +14,18 @@ const routes: RouteRecordRaw[] = [
         // redirect: '/constanst',
         name: 'Layout',
         component: () => import('@/layout/index.vue'),
-        children: [],
+        children: [
+            {
+                path: 'home',
+                name: 'Home',
+                component: Home,
+                meta: {
+                    icon: 'Edit',
+                },
+            },
+        ],
     },
-    {
-        path: '/home',
-        name: 'Home',
-        component: Home,
-        meta: {
-            icon: 'Edit',
-        },
-    },
+
     {
         path: '/login',
         name: 'Login',

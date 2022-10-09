@@ -1,24 +1,25 @@
-export interface IUid { 
+export interface IUid {
     uid: number;
 }
-export interface IUser { 
+export interface IUser {
     id: number;
     username: string;
     auth: Array<number>;
 }
 
-export interface IRouter { 
+export interface IRouter {
     id: number;
     pid: number;
     path: string;
-    link?: string; 
+    link?: string;
     name: string;
     title: string;
-    children?: IRouter[]
+    children?: IRouter[];
 }
 
-export interface IState { 
+export interface IState {
     uid: number;
     hasAuth: boolean;
-    routeTree: IRouter[]
+    routeTree: IRouter[];
+    token: string | null;
 }

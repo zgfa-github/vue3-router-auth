@@ -39,7 +39,8 @@ import { login } from '@/services/login';
 import { routerBeforeEach } from '@/router/route';
 import store from '@/store';
 import router from '@/router';
-
+import { SET_TOKEN } from '@/store/actionTypes';
+const a = ref(0);
 const ruleFormRef = ref<FormInstance>();
 const ruleForm = reactive({
     username: '',
@@ -62,9 +63,10 @@ const submitForm = (formEl: FormInstance | undefined) => {
         if (valid) {
             console.log('submit!');
             let res = await login(ruleForm);
+            console.log(res);
+            await store.dispatch(SET_TOKEN, res.token);
 
             result.push({ path: '/' });
-            routerBeforeEach(router, store);
         } else {
             console.log('error submit!');
             return false;

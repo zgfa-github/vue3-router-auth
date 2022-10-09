@@ -1,4 +1,4 @@
-import { SET_ROUTE_TREE } from './../store/actionTypes';
+import { SET_ROUTE_TREE } from '@/store/actionTypes';
 import store from '@/store';
 import { Router, RouteRecordRaw, useRouter } from 'vue-router';
 import { Store } from 'vuex';
@@ -57,8 +57,8 @@ export function generateRouter(routeTree: IRouter[]) {
 
         return _route;
     });
-    console.log('生成路由递归~~~~~~');
-    console.log(newRoutes);
+    // console.log('生成路由递归~~~~~~');
+    // console.log(newRoutes);
     return newRoutes;
 }
 
@@ -67,20 +67,26 @@ export function generateRouter(routeTree: IRouter[]) {
 // }
 
 export function routerBeforeEach(router: Router, store: Store<IState>) {
-    console.log('routerBeforeEach');
+    console.log('routerBeforeEach函数开始');
 
     router.beforeEach(async (to, from, next) => {
-        console.log('路由拦截');
+        // console.log('路由拦截开始');
+        // console.log(`路由是否？${store.state.hasAuth}`);
+        const token = localStorage.getItem('token');
+        //console.log(`token值：${token}`);
 
-        if (!store.state.hasAuth) {
+        if (token && !store.state.hasAuth) {
+            console.log('第一次');
+
             await store.dispatch(SET_ROUTE_TREE);
             const currentRoutes = router.options.routes;
-            console.log(55555);
-            console.log(currentRoutes);
+            // console.log(55555);
+            // console.log(currentRoutes);
 
             const accessRoutes = generateRouter(store.state.routeTree);
             console.log('返回,树结构转化为路由映射结构');
             console.log(accessRoutes);
+            console.log('routerBeforeEach函数end============');
 
             // accessRoutes.forEach((item) => {
             //     const has = currentRoutes.some((it) => it.path === item.path);
@@ -102,14 +108,34 @@ export function routerBeforeEach(router: Router, store: Store<IState>) {
             //     //router.options.routes[0].children?.push(route);
             // });
 
-            console.log('动态添加路由后,获取所有路由');
-            console.log(router.getRoutes());
+            // console.log('动态添加路由后,获取所有路由');
+            // console.log(router.getRoutes());
             //next({...to, replace: true})
-            next({ path: to.path });
+            /**
+             * 表示路由拦截成功，重定向到路由to.path，会再次调用router.beforeEach()，
+             * 所以会进入死循环
+             * next({ path: to.path });
+             */
+            /**
+             * 直接到当前的路径的页面
+             * next('/')
+             */
+            next('/');
         } else {
-            console.log('next');
-
+            console.log('没有token的时候，可能没登录或者token过期');
             next();
         }
+        // else if (to.path === '/login') {
+        //     //whiteList.indexOf(to.path) > -1
+        //     /**
+        //      * 要注意进入死循环，所以必须加to.path === '/login'
+        //      */
+        //     console.log('1000000000000');
+
+        //     next();
+        // } else {
+        //     console.log('22');
+        //     next('/login');
+        // }
     });
 }

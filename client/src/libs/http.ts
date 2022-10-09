@@ -9,6 +9,10 @@ const http = axios.create({
 });
 http.interceptors.request.use(
     (config: AxiosRequestConfig) => {
+        const token: string = localStorage.getItem('token') || '';
+        //console.log(token);
+
+        //config.headers.token = token;
         return config;
     },
     (error: Error) => {
@@ -22,7 +26,7 @@ http.interceptors.response.use((res: AxiosResponse) => {
     if (res.data.code === 1) {
         return Promise.reject(res.data.data);
     }
-    return res.data.data;
+    return res.data.result;
 });
 
 export default http;

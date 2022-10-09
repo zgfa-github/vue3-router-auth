@@ -1,5 +1,5 @@
 import { Commit } from 'vuex';
-import { SET_AUTH, SET_ROUTE_TREE } from './actionTypes';
+import { SET_AUTH, SET_ROUTE_TREE, SET_TOKEN, DEL_TOKEN } from './actionTypes';
 import { IRouter, IState } from '@/types';
 import { getRouterAuth } from '@/services/getRouterAuth';
 import { formatRouteTree } from '@/utils';
@@ -33,5 +33,17 @@ export default {
         console.log('=========================');
         commit(SET_ROUTE_TREE, routeTree);
         commit(SET_AUTH, true);
+    },
+    [SET_TOKEN](
+        { commit, state }: { commit: Commit; state: IState },
+        value: string,
+    ) {
+        console.log(state);
+        console.log(value);
+
+        commit(SET_TOKEN, value);
+    },
+    [DEL_TOKEN]() {
+        localStorage.removeItem('token');
     },
 };

@@ -1,6 +1,12 @@
 import { IUser, IRouter } from './../../server/src/data/type';
 import { MockMethod } from 'vite-plugin-mock';
 import { users, Routes } from './data/index';
+import {
+    resultSuccess,
+    resultError,
+    getRequestToken,
+    requestParams,
+} from './_utils';
 export default [
     {
         url: '/mock/api/getRouterAuth',
@@ -17,18 +23,18 @@ export default [
             if (!uid) {
                 return false;
             }
-            userInfo.auth.map((rid) => {
+            userInfo?.auth.map((rid) => {
                 Routes.map((route: IRouter) => {
                     if (rid === route.id) {
                         authRouteList.push(route);
                     }
                 });
             });
-            return {
-                code: 200,
-                message: 'ok',
-                data: authRouteList,
-            };
+            return resultSuccess([
+                // code: 200,
+                // message: 'okkk',
+                ...authRouteList,
+            ]);
         },
     },
 ] as MockMethod[];

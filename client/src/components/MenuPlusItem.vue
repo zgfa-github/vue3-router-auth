@@ -17,7 +17,7 @@
     </el-sub-menu>
     <el-menu-item v-else :index="item.path">
         <template #title>
-            <div>{{ item.path }}</div>
+            <!-- <div>{{ item.path }}</div> -->
             {{ item.title }}
         </template>
     </el-menu-item>
@@ -34,7 +34,7 @@ const props = defineProps({
         default: () => ({}),
     },
 });
-console.log(props.item);
+// console.log(props.item);
 </script>
 
 <style></style>

@@ -8,4 +8,9 @@
 import Vue from 'vue';
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.el-main {
+    margin: 60px 0 0;
+    background: pink;
+}
+</style>
