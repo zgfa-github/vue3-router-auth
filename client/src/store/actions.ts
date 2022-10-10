@@ -1,7 +1,13 @@
 import { Commit } from 'vuex';
-import { SET_AUTH, SET_ROUTE_TREE, SET_TOKEN, DEL_TOKEN } from './actionTypes';
+import {
+    SET_AUTH,
+    SET_ROUTE_TREE,
+    SET_TOKEN,
+    DEL_TOKEN,
+    GET_COURSE_LIST,
+} from './actionTypes';
 import { IRouter, IState } from '@/types';
-import { getRouterAuth } from '@/services/getRouterAuth';
+import { getRouterAuth, getCourseList } from '@/services/index';
 import { formatRouteTree } from '@/utils';
 //console.log(formatRouteTree);
 
@@ -45,5 +51,16 @@ export default {
     },
     [DEL_TOKEN]() {
         localStorage.removeItem('token');
+    },
+    async [GET_COURSE_LIST]({
+        commit,
+        state,
+    }: {
+        commit: Commit;
+        state: IState;
+    }) {
+        const res = await getCourseList();
+        console.log(res);
+        commit(GET_COURSE_LIST, res);
     },
 };

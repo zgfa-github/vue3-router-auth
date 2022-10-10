@@ -31,13 +31,16 @@ declare module '@vue/runtime-core' {
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Layout: typeof import('./src/components/layout/Layout.vue')['default']
     Main: typeof import('./src/components/Main.vue')['default']
+    MainTitle: typeof import('./src/components/MainTitle.vue')['default']
     MenuItem: typeof import('./src/components/MenuItem.vue')['default']
     MenuPlusItem: typeof import('./src/components/MenuPlusItem.vue')['default']
     MyFooter: typeof import('./src/components/MyFooter.vue')['default']
     MyHeader: typeof import('./src/components/MyHeader.vue')['default']
     MyMain: typeof import('./src/components/MyMain.vue')['default']
     MySide: typeof import('./src/components/MySide.vue')['default']
+    Paging: typeof import('./src/components/Paging.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Table: typeof import('./src/components/Table.vue')['default']
   }
 }

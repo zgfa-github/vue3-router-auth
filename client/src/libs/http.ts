@@ -5,7 +5,7 @@ const BASE_URL = '/mock/api';
 const PRO_URL = '/api';
 const http = axios.create({
     baseURL: BASE_URL,
-    timeout: 4000,
+    timeout: 5000,
 });
 http.interceptors.request.use(
     (config: AxiosRequestConfig) => {

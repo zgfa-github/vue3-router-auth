@@ -4,9 +4,7 @@
     </el-main>
 </template>
 
-<script setup lang="ts">
-import Vue from 'vue';
-</script>
+<script setup lang="ts"></script>
 
 <style lang="less" scoped>
 .el-main {

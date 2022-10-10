@@ -3,4 +3,8 @@ export default {
     hasAuth: false,
     routeTree: [],
     token: '',
+    courseInfo: {
+        courseList: [],
+        total: 0,
+    },
 };

@@ -11,12 +11,12 @@ import Home from '@/views/Home.vue';
 const routes: RouteRecordRaw[] = [
     {
         path: '/',
-        // redirect: '/constanst',
+        redirect: '/index',
         name: 'Layout',
         component: () => import('@/layout/index.vue'),
         children: [
             {
-                path: 'home',
+                path: '/index',
                 name: 'Home',
                 component: Home,
                 meta: {

@@ -21,5 +21,6 @@ export interface IState {
     uid: number;
     hasAuth: boolean;
     routeTree: IRouter[];
+    courseInfo: { courseList: []; total: number };
     token: string | null;
 }

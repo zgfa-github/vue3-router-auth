@@ -8,7 +8,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import axios from 'axios';
 import qs from 'qs';
-import { getRouterAuth } from './services/getRouterAuth';
+import { getRouterAuth } from './services';
 
 import { ref, onMounted } from 'vue';
 import { Menu as IconMenu, Message, Setting } from '@element-plus/icons-vue';

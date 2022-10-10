@@ -1,14 +1,11 @@
 <template>
-    <div>
-        <h4>增加学生</h4>
-        
-    </div>
+    <main-title>
+        <template #title>增加学生</template>
+    </main-title>
 </template>
 
 <script setup lang="ts">
-
+import MainTitle from '../components/MainTitle.vue';
 </script>
 
-<style >
-
-</style>
+<style></style>
