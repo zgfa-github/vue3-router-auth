@@ -99,9 +99,9 @@
 ## flex 知识的理解很重要，那就可以布局很多高级的布局
 - .asnwer{flex: 0 0 100px}，例如这样的方式，解决了我因为.a{position:fixed}带来的脱离文档流问题布局
 - <div>
-- <div class="asnwer"></div>
-- <div class="a"></div>
-- <div class="b"></div>
+- <div class="asnwer">111</div>
+- <div class="a">222</div>
+- <div class="b">333</div>
 - </div>
 - 通过动态绑定样式 :style="{样式名:三目运算符}"
 还可以通过计算属性方式，具体看官网或者百度
