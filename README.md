@@ -123,19 +123,22 @@ npm init vite@latest 详情参考官网
 
 ## 父子之间传参，父子之间通信
 
-- 在ts中怎么写
-/**defineEmits 父子之间触发监听事件写法
+1.在ts中怎么写
 
-- 这是typescript写法
+2.efineEmits 父子之间触发监听事件写法
+
+3.这是typescript写法
+
 - 通过子组件触发，传参过去，父组件接受参数修改
- */
-// const emit = defineEmits<{
-//     (e: 'CurrentHander', currentNum: number): void;
-//     (e: 'changeCancle', bool: boolean): void;
-//     (e: 'update', value: string): void;
-// }>();
 
-- 不在ts中又是怎么写
+```
+const emit = defineEmits<{
+(e: 'CurrentHander', currentNum: number): void;
+(e: 'changeCancle', bool: boolean): void;
+(e: 'update', value: string): void;
+}>();
+```
+- 不在ts中又是怎么写呢，直接动手实践
 - 总之写法上有区别
 - 生命钩子函数hook,那些钩子在setup中运行 ,比如onMouted
 
