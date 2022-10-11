@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-//mock模拟数据接口
+//mock模拟数据接口，也可以把这些变量写在环境变量当中
 const BASE_URL = '/mock/api';
 //代理真实接口(解决跨域)
 const PRO_URL = '/api';
