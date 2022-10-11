@@ -14,7 +14,7 @@
                 autocomplete="off"
             />
         </el-form-item>
-        <el-form-item label="Confirm" prop="password">
+        <el-form-item label="密码" prop="password">
             <el-input
                 v-model="ruleForm.password"
                 type="password"
@@ -40,20 +40,43 @@ import { routerBeforeEach } from '@/router/route';
 import store from '@/store';
 import router from '@/router';
 import { SET_TOKEN } from '@/store/actionTypes';
+
 const a = ref(0);
 const ruleFormRef = ref<FormInstance>();
 const ruleForm = reactive({
     username: '',
     password: '',
 });
-const validatePass = () => {};
-const validatePass2 = () => {};
-const checkAge = () => {};
+const validateUser = (rule: any, value: any, callback: any) => {
+    if (!value) {
+        console.log(111);
 
+        callback(new Error('请输入用户名'));
+    }
+};
+const validatePass = (rule: any, value: any, callback: any) => {
+    if (!value) {
+        callback(new Error('请输入密码'));
+    }
+};
+// const callback = (message: Error) => {
+//     return message;
+// };
 const rules = reactive({
-    pass: [{ validator: validatePass, trigger: 'blur' }],
-    checkPass: [{ validator: validatePass2, trigger: 'blur' }],
-    age: [{ validator: checkAge, trigger: 'blur' }],
+    username: [
+        {
+            validator: validateUser,
+            trigger: 'blur',
+            required: true,
+        },
+    ],
+    password: [
+        {
+            validator: validatePass,
+            trigger: 'blur',
+            required: true,
+        },
+    ],
 });
 let result = useRouter();
 console.log(result);
