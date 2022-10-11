@@ -3,9 +3,9 @@
 客户端client
 
 ## vite脚手架工具构建
-
-- npm init vite@latest 详情参考官网
-
+```
+npm init vite@latest 详情参考官网
+```
 - vite.config.ts  配置参数  详情参考官网
 
 ## vue3框架
@@ -16,12 +16,12 @@
 ## vue-router4.0版本以上
 
 ## vuex@next 版本  (官网都有详细介绍，要学会学习)
-
+```
 - state
 - actions
 - mutations
 - 常量声明  export const SET_AUTH: string = 'SET_AUTH';
-
+```
 ## vite-plugin-mock模拟数据
 
 ## 工具函数utils
@@ -144,6 +144,7 @@
 ### 总结：掌握基础知识很重要啊，万丈高楼平地起
 
 #### 思路/想法也很重要
-
+`Object.prototype.toString.call()`
 > 思路决定你的出路
 >> 人要有想法和主见
+>>> 平和心态，沉着冷静，静心
