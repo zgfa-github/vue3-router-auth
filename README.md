@@ -1,5 +1,5 @@
 # 用vue3学习路由权限：分别用到如下知识
-==============================================
+
 客户端client
 ## vite脚手架工具构建
 
@@ -98,11 +98,11 @@
 
 ## flex 知识的理解很重要，那就可以布局很多高级的布局
 - .asnwer{flex: 0 0 100px}，例如这样的方式，解决了我因为.a{position:fixed}带来的脱离文档流问题布局
-- <div>
-- <div class="asnwer">111</div>
-- <div class="a">222</div>
-- <div class="b">333</div>
-- </div>
+<div>
+<div class="asnwer">111</div>
+<div class="a">222</div>
+<div class="b">333</div>
+</div>
 - 通过动态绑定样式 :style="{样式名:三目运算符}"
 还可以通过计算属性方式，具体看官网或者百度
 
@@ -124,3 +124,6 @@
 - 生命钩子函数hook,那些钩子在setup中运行 ,比如onMouted
 
 ## watch toRefs withDefaults 使用
+
+### 总结：掌握基础知识很重要啊
+
