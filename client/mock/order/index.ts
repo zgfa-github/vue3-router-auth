@@ -5,7 +5,7 @@ import {
     getRequestToken,
     requestParams,
 } from '../_utils';
-interface ICourse {
+interface IOrderDetails {
     name: string;
     num: number;
     sales: number;
@@ -52,7 +52,7 @@ let newDay = year + '-' + month + '-' + day;
 // let dateTime = new Date();
 // let res = dateTime.setDate(dateTime.getDate() + 1);
 // let date = new Date(res);
-const tableData1: ICourse[] = [];
+const tableData1: IOrderDetails[] = [];
 for (let i = 0; i < 120; i++) {
     tableData1.push({
         name: 'Tom',

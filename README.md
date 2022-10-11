@@ -98,11 +98,29 @@
 
 ## flex 知识的理解很重要，那就可以布局很多高级的布局
 - .asnwer{flex: 0 0 100px}，例如这样的方式，解决了我因为.a{position:fixed}带来的脱离文档流问题布局
-<div>
-  <div class="asnwer"></div>
-  <div class="a"></div>
-  <div class="b"></div>
-</div>
+- <div>
+- <div class="asnwer"></div>
+- <div class="a"></div>
+- <div class="b"></div>
+- </div>
 - 通过动态绑定样式 :style="{样式名:三目运算符}"
 还可以通过计算属性方式，具体看官网或者百度
 
+## 要是用ts写程序，还是先规划好数据先，再写出声明文件，然后在Mock模拟接口
+
+## 父子之间传参，父子之间通信 
+- 在ts中怎么写
+/**defineEmits 父子之间触发监听事件写法
+ * 这是typescript写法
+ * 通过子组件触发，传参过去，父组件接受参数修改
+ */
+// const emit = defineEmits<{
+//     (e: 'CurrentHander', currentNum: number): void;
+//     (e: 'changeCancle', bool: boolean): void;
+//     (e: 'update', value: string): void;
+// }>();
+- 不在ts中又是怎么写
+- 总之写法上有区别
+- 生命钩子函数hook,那些钩子在setup中运行 ,比如onMouted
+
+## watch toRefs withDefaults 使用

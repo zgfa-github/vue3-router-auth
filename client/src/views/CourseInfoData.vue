@@ -13,6 +13,7 @@ import { getCourseList } from '@/services';
 import { ref, onMounted, reactive, computed } from 'vue';
 import { useStore } from 'vuex';
 import store from '@/store';
+import { IProps } from '@/types';
 let thList = reactive({
     th: [],
 });
@@ -21,7 +22,7 @@ let courseList = reactive({
 });
 let total = ref(0);
 let courseInfo = reactive({
-    info: {},
+    info: {} as IProps,
 });
 // let pageNum = ref(0);
 // let pageSize = ref(10);
@@ -30,8 +31,9 @@ const test = async () => {
     const res = await getCourseList();
     courseInfo.info = res;
 };
-test();
-onMounted(async () => {
+
+onMounted(() => {
+    test();
     //console.log(await getCourseList());
     //const res = await getCourseList();
     //courseList.list = res.data;
