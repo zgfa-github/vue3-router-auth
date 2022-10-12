@@ -30,6 +30,7 @@ npm init vite@latest 详情参考官网
 ```
 npm i mockjs vite-plugin-mock
 ```
+- mock 模拟增删改查接口数据，在test1.vue文件中有实践
 ## 工具函数utils
 - 封装更多工具函数，方便重复使用和维护
 
@@ -153,7 +154,7 @@ const emit = defineEmits<{
 
 - 是什么？
 
-|表头1|表头2|表头3|
+|watch|toRefs|withDefaults|
 |:--------:|:--------:|:-------:|
 |一行1|一行2|一行3|
 |二行1|二行2|二行3|

@@ -6,11 +6,14 @@ const PRO_URL = '/api';
 const http = axios.create({
     baseURL: BASE_URL,
     timeout: 5000,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
 });
 http.interceptors.request.use(
     (config: AxiosRequestConfig) => {
         const token: string = localStorage.getItem('token') || '';
-        //console.log(token);
+        console.log('请求拦截');
+
+        console.log(config);
 
         //config.headers.token = token;
         return config;
@@ -20,13 +23,20 @@ http.interceptors.request.use(
     },
 );
 
-http.interceptors.response.use((res: AxiosResponse) => {
-    //console.log(res);
+http.interceptors.response.use(
+    (res: AxiosResponse) => {
+        // console.log('请求响应成功');
 
-    if (res.data.code === 1) {
-        return Promise.reject(res.data.data);
-    }
-    return res.data.result;
-});
+        // console.log(res);
+        if (res.data.code === 1) {
+            return Promise.reject(res.data.data);
+        }
+        return res.data.result;
+    },
+    (error: Error) => {
+        console.log(error);
+        return Promise.reject(error);
+    },
+);
 
 export default http;

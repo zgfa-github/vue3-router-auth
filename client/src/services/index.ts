@@ -32,4 +32,67 @@ function getDetailList() {
         throw err;
     });
 }
-export { getRouterAuth, getCourseList, getDetailList };
+interface IEnglist {
+    params: {
+        info: {
+            pageNum: number;
+            pageSize: number;
+            searchKey: string;
+        };
+    };
+}
+interface IWord {
+    params: {
+        index: number | null;
+        world: string;
+        chinese: string;
+    };
+}
+interface IWordId {
+    params: {
+        english: null;
+    };
+}
+function getEnglishList(params: IEnglist) {
+    console.log(params);
+
+    return http({
+        url: '/getEnglishList',
+        method: 'post',
+        data: params,
+    }).catch((err) => {
+        console.log(err);
+
+        throw err;
+    });
+}
+function addEnglish(params: IWord) {
+    return http({
+        url: '/addEnglish',
+        method: 'post',
+        data: params,
+    }).catch((err) => {
+        console.log(err);
+
+        throw err;
+    });
+}
+function deleteEnglish(params: IWordId) {
+    return http({
+        url: '/deleteEnglish',
+        method: 'post',
+        data: params,
+    }).catch((err) => {
+        console.log(err);
+
+        throw err;
+    });
+}
+export {
+    getRouterAuth,
+    getCourseList,
+    getDetailList,
+    getEnglishList,
+    addEnglish,
+    deleteEnglish,
+};
