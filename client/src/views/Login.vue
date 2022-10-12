@@ -40,6 +40,7 @@ import { routerBeforeEach } from '@/router/route';
 import store from '@/store';
 import router from '@/router';
 import { SET_TOKEN } from '@/store/actionTypes';
+import { isMobile, isPassword } from '@/utils';
 
 const a = ref(0);
 const ruleFormRef = ref<FormInstance>();
@@ -49,14 +50,23 @@ const ruleForm = reactive({
 });
 const validateUser = (rule: any, value: any, callback: any) => {
     if (!value) {
-        console.log(111);
-
         callback(new Error('请输入用户名'));
+        if (!isMobile(ruleForm.username)) {
+            callback(new Error('请输入正确手机号码'));
+        }
+    } else if (!isMobile(ruleForm.username)) {
+        callback(new Error('请输入正确手机号码'));
+    } else {
+        return true;
     }
 };
 const validatePass = (rule: any, value: any, callback: any) => {
     if (!value) {
         callback(new Error('请输入密码'));
+    } else if (!isPassword(ruleForm.password)) {
+        callback(new Error('请输入6位数字密码'));
+    } else {
+        return true;
     }
 };
 // const callback = (message: Error) => {
@@ -81,8 +91,11 @@ const rules = reactive({
 let result = useRouter();
 console.log(result);
 const submitForm = (formEl: FormInstance | undefined) => {
+    console.log(formEl);
+
     if (!formEl) return;
     formEl.validate(async (valid) => {
+        console.log(valid);
         if (valid) {
             console.log('submit!');
             let res = await login(ruleForm);

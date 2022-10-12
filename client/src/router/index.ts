@@ -23,6 +23,22 @@ const routes: RouteRecordRaw[] = [
                     icon: 'Edit',
                 },
             },
+            {
+                path: 'test',
+                name: 'Test',
+                component: () => import('@/views/Test.vue'),
+                meta: {
+                    icon: 'Edit',
+                },
+            },
+            {
+                path: 'test1',
+                name: 'Test1',
+                component: () => import('@/views/Test1.vue'),
+                meta: {
+                    icon: 'Edit',
+                },
+            },
         ],
     },
 

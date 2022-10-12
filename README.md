@@ -22,11 +22,18 @@ npm init vite@latest 详情参考官网
 - mutations
 - 常量声明  export const SET_AUTH: string = 'SET_AUTH';
 ```
-## vite-plugin-mock模拟数据
+## Vue3项目配置Mock模拟接口数据
 
+- 开发流程很多，不同公司都有自己的一套流程，甚至一套公司里面不同的组都有自己单独的开发流程。 对前端来说，很多情况静态页面写好了，接口给了字段，要是有模拟的数据，页面开发完成，对接的时候只需要稍微调整
+
+- vite-plugin-mock模拟数据
+```
+npm i mockjs vite-plugin-mock
+```
 ## 工具函数utils
+- 封装更多工具函数，方便重复使用和维护
 
-- 对路由数据的处理，实质就是算法+数据
+- 对路由数据的处理，实质就是算法+数据 = 程序
 
 服务端 server
 
