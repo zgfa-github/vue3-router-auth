@@ -35,7 +35,7 @@
 import { ref, reactive } from 'vue';
 import type { FormInstance } from 'element-plus';
 import { useRouter } from 'vue-router';
-import { login } from '@/services/login';
+import { login } from '@/services';
 import { routerBeforeEach } from '@/router/route';
 import store from '@/store';
 import router from '@/router';

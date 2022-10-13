@@ -7,7 +7,7 @@ import {
     GET_COURSE_LIST,
 } from './actionTypes';
 import { IRouter, IState } from '@/types';
-import { getRouterAuth, getCourseList } from '@/services/index';
+import { getRouterAuth, getCourseList } from '@/services';
 import { formatRouteTree } from '@/utils';
 //console.log(formatRouteTree);
 

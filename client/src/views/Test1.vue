@@ -117,12 +117,7 @@
 
 <script lang="ts" setup>
 import { reactive, ref, onMounted } from 'vue';
-import {
-    getEnglishList,
-    addEnglish,
-    getDetailList,
-    deleteEnglish,
-} from '@/services';
+import { getEnglishList, addEnglish, deleteEnglish } from '@/services';
 import { ElMessage, ElMessageBox } from 'element-plus';
 const showAddEnglish = ref(false);
 const english = reactive({
