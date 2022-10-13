@@ -123,7 +123,7 @@ import {
     getDetailList,
     deleteEnglish,
 } from '@/services';
-import { ElMessageBox } from 'element-plus';
+import { ElMessage, ElMessageBox } from 'element-plus';
 const showAddEnglish = ref(false);
 const english = reactive({
     index: null,
@@ -257,7 +257,11 @@ const clkBtnSave = async () => {
 const clkBtnDelete = (index, row, done: () => void) => {
     console.log(row);
 
-    ElMessageBox.confirm('你确定要删除?')
+    ElMessageBox.confirm('你确定要删除?', '温馨提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning',
+    })
         .then(async () => {
             console.log('删除');
             let res = await deleteEnglish({ params: { english: row } });
@@ -272,13 +276,21 @@ const clkBtnDelete = (index, row, done: () => void) => {
                         },
                     },
                 });
+                ElMessage({
+                    type: 'success',
+                    message: '删除成功',
+                });
                 englishPage.list = res.data.list;
                 englishPage.total = res.data.total;
             }
-            done();
+            //done();
         })
         .catch(() => {
             // catch error
+            ElMessage({
+                type: 'info',
+                message: '取消删除',
+            });
         });
 };
 </script>
