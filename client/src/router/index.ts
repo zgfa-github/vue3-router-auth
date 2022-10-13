@@ -39,6 +39,14 @@ const routes: RouteRecordRaw[] = [
                     icon: 'Edit',
                 },
             },
+            {
+                path: 'testgoods',
+                name: 'TestGoods',
+                component: () => import('@/views/TestGoods.vue'),
+                meta: {
+                    icon: 'Edit',
+                },
+            },
         ],
     },
 

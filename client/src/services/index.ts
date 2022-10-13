@@ -2,6 +2,7 @@
 import { getCourseList } from './modules/course';
 import { getEnglishList, addEnglish, deleteEnglish } from './modules/english';
 import { getDetailList } from './modules/order';
+import { getGoodsList } from './modules/goods';
 import { getRouterAuth, login } from './modules/system/login';
 // export const API = Object.assign(
 //     {},
@@ -21,4 +22,5 @@ export {
     addEnglish,
     deleteEnglish,
     getDetailList,
+    getGoodsList,
 };

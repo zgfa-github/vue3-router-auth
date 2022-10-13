@@ -166,7 +166,29 @@ const emit = defineEmits<{
 1.通过登录后动态加载的路由菜单（等于说登录后才显示的左边菜单）
 2.没登录的情况下（左边默认菜单）
 3.还有感觉很多代码重复的，没有充分封装共用起来
+## sku商品规格的实践,数据的关联性，算法很重要
 
+- 下面这段代码就是组合数据用的
+```
+function cartesianProductOf ()  {
+    console.log(8888);
+
+    return Array.prototype.reduce.call(
+        arguments,
+        function (a, b) {
+            var ret = [];
+            a.forEach(function (a) {
+                b.forEach(function (b) {
+                    ret.push(a.concat([b]));
+                });
+            });
+            return ret;
+        },
+        [[]],
+    );
+};
+cartesianProductOf([1,2,3,4])
+```
 ### 生活和工作总结：掌握基础知识很重要啊，万丈高楼平地起
 
 #### 思路/想法也很重要
