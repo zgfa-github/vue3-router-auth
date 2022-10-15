@@ -86,6 +86,11 @@
                                                         <el-col :span="4">
                                                             <!-- v-if="unit.unitDefId ? 'disabled' : ''" -->
                                                             <el-button
+                                                                v-if="
+                                                                    unit.unitDefId
+                                                                        ? 'disabled'
+                                                                        : ''
+                                                                "
                                                                 size="small"
                                                                 v-on:click="
                                                                     addUnit(key)
@@ -177,7 +182,7 @@
                                                 ) in itemInfo.tableHeader"
                                                 :key="index"
                                             >
-                                                {{ item }}
+                                                {{ item.join('') }}
                                             </th>
                                             <th>商品售价</th>
                                             <th>市场价</th>
@@ -192,6 +197,8 @@
                                             :key="tableKey"
                                         >
                                             <td
+                                                align="center"
+                                                style="width: 100px"
                                                 v-for="(item, index) in row"
                                                 :key="index"
                                             >
@@ -379,6 +386,7 @@
 ​
 <script setup lang="ts">
 import { defineComponent, ref, reactive, watch } from 'vue';
+import { sliceIntoChunks, spliceIntoChunks, doComb, comb } from '@/utils';
 // import { shopAdminSpecGroup, shopAdminSpecValue } from '@/api/product';
 const info_show = ref(false);
 const unit_show = ref(true);
@@ -426,12 +434,17 @@ const itemInfo = reactive({
         // },
     ],
     table: [
-        // ['小米', '套餐1', '红色'],
         // ['小米', '套餐2', '绿色'],
         // ['小米', '套餐3', '黑色'],
+        //['小米'],['苹果']
+        // [['小米'], ['套餐1']],
+        // [['小米'], ['套餐2']],
+        // [['苹果'], ['套餐1']],
+        // ['苹果', '套餐1'],
+        // ['苹果', '套餐2'],
     ] as any[],
     tableHeader: [
-        // '品牌', '套餐', '颜色'
+        // ['品牌'], ['套餐'], ['颜色']
     ],
 });
 
@@ -490,33 +503,46 @@ const rules = reactive({
 watch(
     itemInfo.unitList,
     (oldvalue, newvalue) => {
-        console.log('watch');
+        console.log('watch监听');
         console.log(oldvalue);
         console.log(newvalue);
         let selectCategory = [];
         let res = JSON.parse(JSON.stringify(newvalue));
+        console.log('JSON.parse');
         console.log(res);
 
         if (res.length > 0) {
-            console.log(0);
+            console.log('有数组长度了');
             let flag = true;
             res.forEach(function (value, index) {
                 if (value.unit.length < 0) {
                     flag = false;
                 }
                 var undef = value['unitDefId'].split(':');
+                console.log('分割成数组');
                 console.log(undef);
-                if (undef[0].length == 0 && value['unitDefId'] === '') {
-                    itemInfo.tableHeader = [];
-                    return;
-                }
-                itemInfo.tableHeader.splice(index, 1);
-                console.log(itemInfo.tableHeader.splice(index, 1));
+                //value['unitDef'] = value['unitDefId'];
+
+                // if (undef[0].length == 0 && value['unitDefId'] === '') {
+                //     console.log('是否为空');
+                //     itemInfo.tableHeader = [];
+                //     //itemInfo.tableHeader.splice(index, 1);
+                //     return;
+                // }
+                //修改头部大分类，功能还有bug，不够完善,有待完善
+                itemInfo.tableHeader.forEach((item) => {
+                    if (item) {
+                        // alert(123);
+                        itemInfo.tableHeader.splice(index, 1);
+                        //console.log(itemInfo.tableHeader.splice(index, 1));
+                    }
+                });
 
                 itemInfo.tableHeader.push(undef);
+                console.log('th头部数组');
                 console.log(JSON.parse(JSON.stringify(itemInfo.tableHeader)));
 
-                var unit = [];
+                let unit = [];
                 value.unit.forEach(function (k) {
                     if (k == '') {
                         flag = false;
@@ -530,16 +556,23 @@ watch(
                     }
                 });
                 if (unit) {
-                    selectCategory.push(unit);
+                    selectCategory.push(JSON.parse(JSON.stringify(unit)));
                     console.log('selectCategory');
+                    console.log(selectCategory.length);
                     console.log(selectCategory);
                 }
             });
-            itemInfo.table = cartesianProductOf(selectCategory);
+            // let result = cartesianProductOf(
+            //     sliceIntoChunks(selectCategory, 1),
+            // ) as any[];
+            // JSON.parse(JSON.stringify(result));
+            let result = doComb(selectCategory);
+            itemInfo.table = result;
             console.log('table');
             console.log(itemInfo.table);
 
             itemInfo.unitStock = [];
+            if (!itemInfo.table) return;
             itemInfo.table.forEach(function (value) {
                 var unitStock = {
                     unit_def: itemInfo.tableHeader,
@@ -552,6 +585,9 @@ watch(
                     img: '',
                 };
                 itemInfo.unitStock.push(unitStock);
+                console.log('unitStock');
+
+                console.log(itemInfo.unitStock);
             });
             if (flag == false) {
                 itemInfo.tableHeader = [];
@@ -606,20 +642,21 @@ const addUnitDef = () => {
     };
 
     itemInfo.unitList.push(unit);
+    console.log('新增添加分类');
     console.log(itemInfo.unitList);
 };
 const addUnit = (key) => {
-        console.log(key);
-        const unit = '';
-        itemInfo.unitList[key]['unit'].push(unit);
-        console.log(itemInfo.unitList[key]['unit']);
+    console.log(key);
+    const unit = '';
+    itemInfo.unitList[key]['unit'].push(unit);
+    console.log(itemInfo.unitList[key]['unit']);
 
-        updateSelectUnit();
-    },
-    constdelUnit = (key, k) => {
-        itemInfo.unitList[key]['unit'].splice(k, 1);
-        updateSelectUnit();
-    };
+    updateSelectUnit();
+};
+const delUnit = (key, k) => {
+    itemInfo.unitList[key]['unit'].splice(k, 1);
+    updateSelectUnit();
+};
 const delUnitDef = (key) => {
     itemInfo.unitList.splice(key, 1);
     updateSelectUnit();
